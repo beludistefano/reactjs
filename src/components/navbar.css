@@ -1,0 +1,36 @@
+
+.nav{
+    height: 160px;
+    background-color: black;
+    padding: 5px;
+}
+
+.nav>img{
+    float: left;
+    max-height: 150px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.nav>ul{
+    float: right;
+    line-height: 120px;
+}
+
+
+.nav>ul li{
+    display:inline;
+    margin-right:25px; /* spacing between each menu item */
+}
+
+.nav>ul li a{
+    position:relative;
+    color:white;
+    padding-bottom:8px; /*spacing between each menu item and arrow underline beneath it */
+    text-decoration:none;
+    transition: 300ms all;
+}
+
+.nav>ul li a:hover{
+    color: rgb(148, 5, 60)
+}
