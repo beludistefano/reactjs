@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 .nav{
     height: 160px;
@@ -14,9 +15,15 @@
 
 .nav>ul{
     float: right;
-    line-height: 120px;
+    line-height: 130px;
 }
 
+.nav>h1{
+    float: left;
+    color: rgb(148, 5, 60);
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+}
 
 .nav>ul li{
     display:inline;

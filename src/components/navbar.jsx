@@ -6,6 +6,7 @@ function Navbar() {
         <>
             <nav className="nav">
                 <img className="logo" src={logo} alt="Logo"/>
+                <h1>Discount Dance</h1>
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Productos</a></li>
