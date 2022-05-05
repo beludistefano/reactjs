@@ -1,0 +1,9 @@
+
+.shop-cart{
+    margin-top: 50px;
+    padding: 0px;
+}
+
+.shop-cart>img{
+    max-width: 80px;
+}
