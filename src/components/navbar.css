@@ -41,3 +41,7 @@
 .nav>ul li a:hover{
     color: rgb(148, 5, 60)
 }
+
+.shop{
+    display: inline;
+}
