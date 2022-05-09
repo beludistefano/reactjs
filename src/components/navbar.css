@@ -15,6 +15,7 @@
 
 .nav>ul{
     float: right;
+    margin-right: 100px;
     line-height: 130px;
 }
 
@@ -44,4 +45,8 @@
 
 .shop{
     display: inline;
+    position: absolute;
+    right: 0;
+    width: 25px;
+    height: 25px;
 }
