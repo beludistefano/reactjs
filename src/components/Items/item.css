@@ -1,0 +1,17 @@
+
+.item{
+    width: 300px;
+    background-color: white;
+    margin: 10px;
+    box-shadow: 2px 2px 2px #999;
+    padding: 10px;
+}
+
+.item>button{
+    margin-top: 20px;
+}
+
+.item-list{
+    padding: 20px;
+    display: flex;  
+}

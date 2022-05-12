@@ -1,12 +1,5 @@
 
-#card{
-    width: 200px;
-    height: 200px;
-    background-color: pink;
-    margin: 10px;
-}
-
-#card>button, p{
+.botones>button, p{
     display: inline;
     margin-right: 10px;
     margin-left: 10px;
