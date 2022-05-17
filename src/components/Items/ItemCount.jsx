@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function ItemCount({stock}){
     
-    const [stockItem, setStock] = useState({stock})
+    const [stockItem, setStock] = useState(stock)
     const [cant, setCarrito] = useState(0)
     
     const sumarCant = () => {
@@ -24,7 +24,6 @@ export default function ItemCount({stock}){
     return (
         <>
             <div className="botones">
-                <h6>Cantidad disponible: {stock}</h6>
                 <button onClick={restarCant}>-</button>
                 <p>{cant}</p>
                 <button onClick={sumarCant}>+</button>
