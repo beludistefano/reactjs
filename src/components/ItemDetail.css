@@ -1,0 +1,27 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+.item-bigcard{
+    width: 80%;
+    background-color: rgb(196, 196, 196);
+    margin: auto;
+    min-height: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.item-bigcard>button{
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.item-bigcard>h2{
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+}
