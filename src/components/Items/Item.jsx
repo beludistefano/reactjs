@@ -2,12 +2,12 @@
 import ItemCount from "./ItemCount"
 import "./item.css"
 
-const Item = ({id, title, img, price, stock}) => {
+const Item = ({it}) => {
     return (
         <div className="item">
-            <h3>{title}</h3>
-            <p> {price}</p>
-            <ItemCount stock= {stock} />
+            <h3>{it.title}</h3>
+            <p> {it.price}</p>
+            <ItemCount stock= {it.stock} />
             <button>Agregar al Carrito</button>
         </div>
     )
