@@ -29,9 +29,11 @@
 .nav>ul li{
     display:inline;
     margin-right:25px; /* spacing between each menu item */
+    color:white;
 }
 
-.nav>ul li a{
+.thelink{
+    text-decoration:none;
     position:relative;
     color:white;
     padding-bottom:8px; /*spacing between each menu item and arrow underline beneath it */
@@ -39,7 +41,7 @@
     transition: 300ms all;
 }
 
-.nav>ul li a:hover{
+.nav>ul li:hover{
     color: rgb(148, 5, 60)
 }
 
