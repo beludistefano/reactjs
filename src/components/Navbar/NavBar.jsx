@@ -6,8 +6,6 @@ import { Link } from "react-router-dom"
 
 function Navbar() {
 
-    const saludo = "Por ahora aparezco yo"
-
     return (
         <>
             <nav className="nav">
