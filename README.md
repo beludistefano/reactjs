@@ -1,3 +1,5 @@
+-- Este proyecto esta hecho con sudor y lágrimas. Pero sobre todo LAGRIMAS --
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
