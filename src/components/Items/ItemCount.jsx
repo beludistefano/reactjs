@@ -1,7 +1,7 @@
 import "./ItemCount.css"
 import { useState } from "react";
 
-export default function ItemCount({stock}){
+export default function ItemCount({stock, inputHandler}){
     
     const [stockItem, setStock] = useState(stock)
     const [cant, setCarrito] = useState(0)
@@ -27,6 +27,9 @@ export default function ItemCount({stock}){
                 <p>{cant}</p>
                 <button onClick={sumarCant}>+</button>
             </div>
+            <button onClick={inputHandler}>
+            Agregar al Carrito
+            </button>
         </>
     )
 

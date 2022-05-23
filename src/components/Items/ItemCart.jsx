@@ -1,16 +1,10 @@
 
 import { useState } from "react"
 import ItemAfterAdd from "./ItemAfterAdd"
+import ItemCount from "./ItemCount"
 
-function ButtonOne({inputHandler}){
-    return(
-        <button onClick={inputHandler}>
-            Agregar al Carrito
-        </button>
-    )
-}
 
-const ItemAddCart = () => {
+const ItemCart = ({item}) => {
 
     const [inputType, setInputType] = useState("1")
 
@@ -22,7 +16,7 @@ const ItemAddCart = () => {
         <>
             {
                 inputType === "1" ?
-                    <ButtonOne inputHandler={changeButtons}/>
+                    <ItemCount stock={item.stock} inputHandler={changeButtons}/>
                 :
                     <ItemAfterAdd />
             }
@@ -32,4 +26,4 @@ const ItemAddCart = () => {
 
 }
 
-export default ItemAddCart
+export default ItemCart

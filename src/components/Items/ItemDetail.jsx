@@ -1,7 +1,6 @@
 
 import "./ItemDetail.css"
-import ItemCount from "./ItemCount"
-import ItemAddCart from "./ItemAddCart"
+import ItemCart from "./ItemCart"
 
 export default function ItemDetail({item}) {
 
@@ -10,8 +9,7 @@ export default function ItemDetail({item}) {
             <h2>{item.nombre}</h2>
             <p> {item.description} </p>
             <p> {item.price}</p>
-            <ItemCount stock={item.stock}/>
-            <ItemAddCart />
+            <ItemCart item={item}/>
         </div>
     );
 }
