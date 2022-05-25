@@ -16,17 +16,6 @@ const ItemDetailContainer = ()=>{
         .then(respuesta=> setItem(respuesta))
         .finally(()=>setLoader(false))     
     }, [])
-
-    /*useEffect(() => {
-        setTimeout(() => {
-            fetch("/data/productos.json")
-            .then(response => response.json())
-            .then(itemsList => itemsList.find(el => el.id === detalleId))
-            .then(data => setItem(data))
-            .then(dat => console.log(dat))
-            .finally(() => setLoader(false))
-        }, 5000);
-    },[detalleId]);*/
     
     return(
         <>

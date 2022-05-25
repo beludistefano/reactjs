@@ -5,10 +5,12 @@ import ItemListContainer from "./components/Containers/ItemListContainer"
 import ItemDetailContainer from './components/Containers/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import Cart from './components/Cart/Cart';
+import CartContextProv from './context/CartContext';
 
 function App() {
   return (
     <BrowserRouter>
+    <CartContextProv>
     <div className="App">
       <Navbar />
       <Routes>
@@ -20,6 +22,7 @@ function App() {
         <Route path='/*' element= {<Navigate to="/" replace/>} />
       </Routes>
     </div>
+    </CartContextProv>
     </BrowserRouter>
   );
 }
