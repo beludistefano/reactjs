@@ -9,14 +9,10 @@ export default function ItemDetail({item}) {
 
     const [inputType, setInputType] = useState('itemCount');
 
-    const {addItem, cartList} = UseCartContext();
+    const {addToCart} = UseCartContext();
 
-    function onAdd(cant) {
-        addItem({...item, cant})
-        console.log(cartList)
-    }
-
-    function handleInputType() {
+    function onAdd(quantity) {
+        addToCart({...item, quantity})
         setInputType('ItemAfterAdd');
     }
 
@@ -26,7 +22,7 @@ export default function ItemDetail({item}) {
             <p> {item.description} </p>
             <p> {item.price}</p>
             {inputType === 'itemCount' ?
-                <ItemCount item={item} stock={item.stock} onAdd={onAdd} handleInputType={handleInputType}/>:
+                <ItemCount initial={1} stock={5} onAdd={onAdd}/>:
                 <ItemAfterAdd/>}
         </div>
     );

@@ -1,33 +1,32 @@
 import "./ItemCount.css"
 import { useState } from "react";
 
-export default function ItemCount({item, stock, onAdd, handleInputType}) {
-    const [cant, setCant] = useState(0);
+export default function ItemCount({initial, stock, onAdd}) {
+    const [quantity, setQuantity] = useState(initial);
 
     function sumarCant() {
-        if (cant < stock) {
-            setCant(cant + 1);
+        if (quantity < stock) {
+            setQuantity(quantity + 1);
         } 
     }
     function restarCant() {
-        if (cant > 1) {
-            setCant(cant - 1);
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
         } 
     }
 
-    function addToCart() {
-        onAdd(cant, item.name);
-        handleInputType();
+    function addItem() {
+        onAdd(quantity);
     }
 
     return (
         <>
             <div className="botones">
                 <button onClick={restarCant}>-</button>
-                <p>{cant}</p>
+                <p>{quantity}</p>
                 <button onClick={sumarCant}>+</button>
             </div>
-            <button onClick={addToCart}>
+            <button onClick={addItem}>
             Agregar al Carrito
             </button>
         </>

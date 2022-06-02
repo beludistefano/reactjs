@@ -6,9 +6,9 @@ const Item = ({item}) => {
     return (
         <div className="item">
             <h3>{item.nombre}</h3>
-            <p> {item.price}</p>
+            <p> $ {item.price}</p>
             <Link to={`/detalle/${item.id}`} >
-            <button>Ver más</button>
+            <br></br><button>Ver más</button>
             </Link>
         </div>
     )

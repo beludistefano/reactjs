@@ -8,44 +8,58 @@ export function UseCartContext() {
 
 export default function CartContextProv({children}){
 
-    const [cartList, setCartList] = useState([])
+    const [cartList, setCartList] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalItems, setTotalItems] = useState(0);
 
     function isInCart(id){
         return cartList.some((i) =>{
             return i.id === id})
     }
 
-    function addItem(item) {
+    function addToCart(item) {
         if (isInCart(item.id)) {
-            let i = cartList.findIndex(e => e.id === item.id);
+            let i = cartList.findIndex(el => el.id === item.id);
             const newCartList = cartList;
             newCartList[i].quantity += item.quantity;
-            setCartList(newCartList);
+            updateCart(newCartList);
         } else {
-            setCartList([
-                ...cartList,
-                item]);
+            updateCart([...cartList,item]);
         }
     }
 
-    function clearItems(){
-        setCartList([])
+    function clearCart(){
+        updateCart([])
     }
 
     function clearItem(id) {
         let i = cartList.findIndex(el => el.id === id);
         const newCartList = cartList;
         newCartList.splice(i,1);
-        setCartList(newCartList);
+        updateCart(newCartList);
+    }
+
+    function updateCart(arr) {
+        setCartList(arr);
+        setTotalPrice(arr
+            .map(curr => curr.quantity*curr.price)
+            .reduce((acc,curr) => acc+curr,0)
+        );
+        setTotalItems(arr
+            .map(curr => curr.quantity)
+            .reduce((acc,curr) => acc+curr,0)
+        );
     }
 
     
     return (
         <cartContext.Provider value={{
             cartList,
-            addItem,
-            clearItems,
-            clearItem
+            addToCart,
+            clearCart,
+            clearItem,
+            totalPrice,
+            totalItems,
         }}>
             {children}
         </cartContext.Provider>
