@@ -2,8 +2,8 @@
 import ItemList from "../Item List/ItemList"
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css"
+import { collection, getDocs, getFirestore, where, query } from 'firebase/firestore';
 import { useParams } from "react-router-dom";
-import { getFetch } from "../prueba/prueba"
 
 
 function ItemListContainer() {
@@ -15,14 +15,17 @@ function ItemListContainer() {
 
 
   useEffect(() => {
-    if (id) {
-        getFetch()  // fetch llamada a una api  
-        .then(respuesta=> setProductos(respuesta.filter((prods) => prods.categoria === id)))
-        .finally(()=>setLoading(false))                             
-    } else {
-        getFetch()  // fetch llamada a una api  
-        .then(respuesta=> setProductos(respuesta))
-        .finally(()=>setLoading(false))                 
+    const db = getFirestore();
+    const queryCollection = collection(db, 'productos');
+    if (!id) {
+        getDocs(queryCollection)
+        .then(resp => setProductos(resp.docs.map(el => ({id: el.id, ...el.data()}))))
+        .finally(() => setLoading(false))                  
+      } else {
+        const queryCollectionFilter = query(queryCollection, where('categoria','==', id));
+        getDocs(queryCollectionFilter)
+        .then(resp => setProductos(resp.docs.map(el => ({id: el.id, ...el.data()}))))
+        .finally(() => setLoading(false))
     }
 }, [id])
 

@@ -2,20 +2,22 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../Items/ItemDetail"
 import { useParams } from "react-router-dom";
-import { getFetch } from "../prueba/prueba";
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 const ItemDetailContainer = ()=>{
 
     const [item,setItem] = useState({});
     const [loader,setLoader] = useState(true);
 
-    const {detalleId} = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
-        getFetch(detalleId)  // fetch llamada a una api  
-        .then(respuesta=> setItem(respuesta))
-        .finally(()=>setLoader(false))     
-    }, [])
+        const db = getFirestore();
+        const dbQuery = doc(db, 'productos', id);
+        getDoc(dbQuery)
+        .then(resp => setItem({id: resp.id, ...resp.data()}))
+        .finally(() => setLoader(false))
+    }, [id])
     
     return(
         <>
